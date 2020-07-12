@@ -36,9 +36,17 @@ try:
         if individual[i][-1] == "." or individual[i][-1] == ",":
             individual[i] = individual[i][:-1]
 
-    # print final result
+
+    # output the individual words into a csv file
+    filename = "output.csv"
+    f = open(filename, "w")
+
     for i in range(len(individual)): 
-        print (individual[i])
-    
+        print (individual[i]) # prints individual words to terminal
+        f.write(individual[i] + "\n") # write to csv file
+
+    # clsoe the csv file
+    f.close()
+
 finally:
     opened.close()
